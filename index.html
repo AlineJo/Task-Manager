@@ -34,31 +34,44 @@
         </div>
         <!--/ jumbotron -> ToDo -->
 
+        <!-- jumbotron -> InReview -->
+        <div class="sgHeight_100p col-sm-4 pt-5">
+            <!-- jumbotron Body -->
+            <div class="h-100 p-5 bg-light border rounded-3">
+                <!-- jumbotron title -->
+                <h2 id="contentContainerInReviewTitle"></h2>
+                <!-- jumbotron contentContainerInReview -->
+                <div id="contentContainerInReview" class="sgOverflow_Y sgHeight_90p py-4">
 
-        <!-- TO-DELETE -->
-        <div class="col-sm-4 pt-5">
-            <div class="h-100 p-5 bg-light border rounded-3">
-                <h2>Add borders</h2>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your content.
-                    Be
-                    sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing
-                    of
-                    both column's content for equal-height.</p>
-                <button class="btn btn-outline-secondary" type="button">Example button</button>
+
+
+                </div>
+                <!--/ jumbotron contentContainerInReview -->
             </div>
+            <!--/ jumbotron Body -->
+
         </div>
-        <div class="col-sm-4 pt-5">
+        <!--/ jumbotron -> InReview -->
+
+        <!-- jumbotron -> InReview -->
+        <div class="sgHeight_100p col-sm-4 pt-5">
+            <!-- jumbotron Body -->
             <div class="h-100 p-5 bg-light border rounded-3">
-                <h2>Add borders</h2>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your content.
-                    Be
-                    sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing
-                    of
-                    both column's content for equal-height.</p>
-                <button class="btn btn-outline-secondary" type="button">Example button</button>
+                <!-- jumbotron title -->
+                <h2 id="contentContainerDoneTitle"></h2>
+                <!-- jumbotron contentContainerInReview -->
+                <div id="contentContainerDone" class="sgOverflow_Y sgHeight_90p py-4">
+
+
+
+                </div>
+                <!--/ jumbotron contentContainerInReview -->
             </div>
+            <!--/ jumbotron Body -->
+
         </div>
-        <!-- TO-DELETE -->
+        <!--/ jumbotron -> InReview -->
+
 
         <!-- templateContentCard -->
         <template id="templateContentCard">
@@ -89,7 +102,6 @@
         <!--/ templateContentCard -->
 
 
-
     </div>
     <!--/ parent container -->
 
@@ -104,7 +116,17 @@
         crossorigin="anonymous"></script>
 
     <script type="module" src="./JS/LABELS/label_index.js"></script>
-    <script type="module" src="./JS/TEMPLATES/template_index.js"></script>
+
+    <script type="module" src="./JS/FETCH/fetch_todo.js"></script>
+    <script type="module" src="./JS/TEMPLATES/template_todo.js"></script>
+    
+    <script type="module" src="./JS/FETCH/fetch_in_review.js"></script>
+    <script type="module" src="./JS/TEMPLATES/template_in_review.js"></script>
+
+
+    <script type="module" src="./JS/FETCH/fetch_done.js"></script>
+    <script type="module" src="./JS/TEMPLATES/template_done.js"></script>
+
 
 </body>
 
