@@ -1,6 +1,33 @@
+:root {
+    --bgColor: #c2c4c8;
 
+    --importanceColorCritical: #e00d0d; 
+    --importanceColorHigh: #ffcc00; 
+    --importanceColorNormal: #00beed; 
+    --importanceColorLow: #a2b7bb; 
+}
 
-.sgParentContainer{
+.sgBGColor{
+    background-color: var(--bgColor);
+}
+
+.sgCritical{
+    background-color: var(--importanceColorCritical);
+}
+
+.sgHigh{
+    background-color: var(--importanceColorHigh);
+}
+
+.sgNormal{
+    background-color: var(--importanceColorNormal);
+}
+
+.sgLow{
+    background-color: var(--importanceColorLow);
+}
+
+.sgParentContainer {
     top: 50%;
     left: 50%;
     width: 100%;
@@ -10,6 +37,14 @@
     position: fixed;
 }
 
-.sgOverflow_Y{
+.sgOverflow_Y {
     overflow-y: scroll;
+}
+
+.sgHeight_100p{
+    height: 100%;
+}
+
+.sgHeight_90p{
+    height: 90%;
 }
