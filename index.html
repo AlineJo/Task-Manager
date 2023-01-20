@@ -20,7 +20,7 @@
             <!-- jumbotron Body -->
             <div class="h-100 p-5 bg-light border rounded-3">
                 <!-- jumbotron title -->
-                <h2 id="contentContainerTodoTitle"></h2>
+                <div id="contentContainerTodoTitle" class="btn btn-lg btn-outline-success" ></div>
                 <!-- jumbotron contentContainerTodo -->
                 <div id="contentContainerTodo" class="sgOverflow_Y sgHeight_90p py-4">
 
@@ -53,7 +53,7 @@
         </div>
         <!--/ jumbotron -> InReview -->
 
-        <!-- jumbotron -> InReview -->
+        <!-- jumbotron -> Done -->
         <div class="sgHeight_100p col-sm-4 pt-5">
             <!-- jumbotron Body -->
             <div class="h-100 p-5 bg-light border rounded-3">
@@ -70,7 +70,7 @@
             <!--/ jumbotron Body -->
 
         </div>
-        <!--/ jumbotron -> InReview -->
+        <!--/ jumbotron -> Done -->
 
 
         <!-- templateContentCard -->
@@ -108,6 +108,60 @@
     <!-- </div> -->
 
 
+
+    <!-- Modal -> Add Content -->
+    <div id="idInsertNewContentModal" class="modal fade" tabindex="-1" aria-labelledby="idInsertNewContentModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 id="idInsertNewContentModalTitle" class="modal-title fs-5">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation">
+
+                        <div class="btn-group mb-3">
+                            <button id="btnImportance" class="btn btn-success btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Importance
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li class="dropdown-item d-flex align-items-center gap-2 py-2">Critical</li>
+                              <li class="dropdown-item d-flex align-items-center gap-2 py-2">High</li>
+                              <li class="dropdown-item d-flex align-items-center gap-2 py-2">Normal</li>
+                              <li class="dropdown-item d-flex align-items-center gap-2 py-2">Low</li>
+                            </ul>
+                          </div>
+
+                        <div class="mb-3">
+                            <label for="idFormWebsiteLink" class="form-label">Task Title</label>
+                            <input id="idFormWebsiteLink" type="text" class="form-control"
+                                placeholder="Fix bug #3">
+                            <div class="valid-feedback">Please enter Task Title</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idFormDescription">Task Details</label>
+                            <textarea id="idFormDescription" class="form-control"
+                                placeholder="ui bug login button isn't clickable"></textarea>
+                            <div class="valid-feedback">Please enter Task Details</div>
+                        </div>
+
+
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="idBtnAddContent" type="button" class="btn btn-success">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Modal -> Add Content -->
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -119,13 +173,15 @@
 
     <script type="module" src="./JS/FETCH/fetch_todo.js"></script>
     <script type="module" src="./JS/TEMPLATES/template_todo.js"></script>
-    
+
     <script type="module" src="./JS/FETCH/fetch_in_review.js"></script>
     <script type="module" src="./JS/TEMPLATES/template_in_review.js"></script>
 
 
     <script type="module" src="./JS/FETCH/fetch_done.js"></script>
     <script type="module" src="./JS/TEMPLATES/template_done.js"></script>
+
+    <script type="module" src="./JS/FETCH/fetch_add_task.js"></script>
 
 
 </body>
