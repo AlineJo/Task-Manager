@@ -2,7 +2,7 @@
 include("./conn.php");
 
 //write query
-$query = "SELECT * FROM `viewTasksTodo`";
+$query = "SELECT * FROM `viewtasksdone`";
 
 //excute query read from db
 $queryResult = $cnn->query($query)->fetchAll(PDO::FETCH_ASSOC);
