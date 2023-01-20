@@ -10,28 +10,24 @@
     <link rel="stylesheet" href="./CSS/style-global.css">
 </head>
 
-<body class="container">
-
-    <!-- <div class="d-flex align-items-center justify-content-center"> -->
+<body class="container sgBGColor">
 
     <!-- parent container -->
-
-    <div class="row align-items-md-stretch sgParentContainer sgOverflow_Y">
+    <div class="row align-items-md-stretch sgParentContainer">
 
         <!-- jumbotron -> ToDo -->
-        <div class="col-sm-4 pt-5">
+        <div class="sgHeight_100p col-sm-4 pt-5">
             <!-- jumbotron Body -->
             <div class="h-100 p-5 bg-light border rounded-3">
                 <!-- jumbotron title -->
-                <h2>Add borders</h2>
-                <!-- jumbotron content -->
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your content.
-                    Be
-                    sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing
-                    of
-                    both column's content for equal-height.</p>
-                <button class="btn btn-outline-secondary" type="button">Example button</button>
-                <!--/ jumbotron content -->
+                <h2 id="contentContainerTodoTitle"></h2>
+                <!-- jumbotron contentContainerTodo -->
+                <div id="contentContainerTodo" class="sgOverflow_Y sgHeight_90p py-4">
+
+
+
+                </div>
+                <!--/ jumbotron contentContainerTodo -->
             </div>
             <!--/ jumbotron Body -->
 
@@ -40,7 +36,6 @@
 
 
         <!-- TO-DELETE -->
-
         <div class="col-sm-4 pt-5">
             <div class="h-100 p-5 bg-light border rounded-3">
                 <h2>Add borders</h2>
@@ -63,8 +58,36 @@
                 <button class="btn btn-outline-secondary" type="button">Example button</button>
             </div>
         </div>
-
         <!-- TO-DELETE -->
+
+        <!-- templateContentCard -->
+        <template id="templateContentCard">
+            <!-- content card -->
+            <div class="card siContentCard mb-4">
+                <div class="row g-0">
+                    <!-- card importance -->
+                    <div id="cardImportance" class="col-md-1 rounded-start">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <!-- card title -->
+                            <h5 id="cardTitle" class="card-title">Card title</h5>
+                            <!-- card details -->
+                            <p id="cardDetails" class="card-text">This is a wider card with supporting text
+                                below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <!-- cardLastUpdate -->
+                            <p id="cardLastUpdate" class="card-text"><small class="text-muted">Last updated
+                                    3
+                                    mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ content card -->
+        </template>
+        <!--/ templateContentCard -->
+
 
 
     </div>
@@ -80,7 +103,9 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
-    <script type="module" src="./js/AddNewContentItem.js"></script>
+    <script type="module" src="./JS/LABELS/label_index.js"></script>
+    <script type="module" src="./JS/TEMPLATES/template_index.js"></script>
+
 </body>
 
 </html>
