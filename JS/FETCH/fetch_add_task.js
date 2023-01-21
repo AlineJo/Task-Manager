@@ -1,36 +1,107 @@
 import { API_URL_ADD_TASK, HTTP_METHOD_POST_NO_CACHE } from "../global/API_URLs.js";
+import {fetchTodo} from "../FETCH/fetch_todo.js"
 
+initClickables()
 
-validate()
+function initClickables() {
+    const selectImporance = document.getElementById("selectImporance")
+    selectImporance.addEventListener("change", function () {
+        selectImporance.classList.remove("sgCritical", "sgHigh", "sgNormal", "sgLow")
 
-function validate(){
+        switch (selectImporance.value) {
+            case "critical": selectImporance.classList.add("sgCritical"); break;
+            case "high": selectImporance.classList.add("sgHigh"); break;
+            case "normal": selectImporance.classList.add("sgNormal"); break;
+            case "low": selectImporance.classList.add("sgLow"); break;
+        }
+    });
+
     const contentContainerTodoTitle = document.getElementById("contentContainerTodoTitle")
     contentContainerTodoTitle.onclick = function () { toggleModal() }
-   
- 
 
-    let jsonRequestBody = {}
-    jsonRequestBody.title = "some title"
-    jsonRequestBody.details = "some details"
-    jsonRequestBody.importance = "critical"
+    const btnAddContent = document.getElementById("btnAddContent")
+    btnAddContent.onclick = function () { validate() }
 
-    //initFetch(jsonRequestBody)
+}
+
+
+function validate() {
+    let isTitleOK = true;
+    let isDetailsOK = true;
+
+    const selectImporance = document.getElementById("selectImporance");
+    const inputTitle = document.getElementById("inputTitle");
+    const inputDetail = document.getElementById("inputDetails");
+    const inputTitleError = document.getElementById("inputTitleError");
+    const inputDetailError = document.getElementById("inputDetailError");
+
+
+    if (inputTitle.value == "") {
+        isTitleOK = false
+        inputTitle.classList.remove("is-valid")
+        inputTitle.classList.add("is-invalid")
+        inputTitleError.classList.remove("valid-feedback")
+        inputTitleError.classList.add("invalid-feedback")
+        inputTitleError.innerText = "Please enter Task Title"
+    }
+    else {
+        isTitleOK = true
+        inputTitle.classList.add("is-valid")
+        inputTitle.classList.remove("is-invalid")
+        inputTitleError.classList.add("valid-feedback")
+        inputTitleError.classList.remove("invalid-feedback")
+        inputTitleError.innerText = ""
+    }
+
+    if (inputDetail.value == "") {
+        isDetailsOK = false
+        inputDetail.classList.remove("is-valid")
+        inputDetail.classList.add("is-invalid")
+        inputDetailError.classList.remove("valid-feedback")
+        inputDetailError.classList.add("invalid-feedback")
+        inputDetailError.innerText = "Please enter Task Details"
+    }
+    else {
+        isDetailsOK = true
+        inputDetail.classList.add("is-valid")
+        inputDetail.classList.remove("is-invalid")
+        inputDetailError.classList.add("valid-feedback")
+        inputDetailError.classList.remove("invalid-feedback")
+        inputDetailError.innerText = ""
+    }
+
+    if (isTitleOK && isDetailsOK) {
+        let jsonRequestBody = {}
+        jsonRequestBody.title = inputTitle.value
+        jsonRequestBody.details = inputDetail.value
+        jsonRequestBody.importance = selectImporance.value
+        initFetch(jsonRequestBody)
+    }
+
 }
 
 async function initFetch(jsonRequestBody) {
 
     const response = await fetch(API_URL_ADD_TASK, HTTP_METHOD_POST_NO_CACHE(jsonRequestBody));
-   
+
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const tasks = await response.json();
+    const addTask = await response.json();
+
+    toggleModal();
+
+if(addTask.is_ok){
+
+    fetchTodo()
+}
+
 
 }
 
 
 function toggleModal() {
     $(function () {
-        $('#idInsertNewContentModal').modal('toggle');
+        $('#addTaskModal').modal('toggle');
     });
 }
