@@ -1,5 +1,5 @@
 import { API_URL_ADD_TASK, HTTP_METHOD_POST_NO_CACHE } from "../global/API_URLs.js";
-import {fetchTodo} from "../FETCH/fetch_todo.js"
+import { fetchTodo } from "../FETCH/fetch_todo.js"
 
 initClickables()
 
@@ -76,6 +76,11 @@ function validate() {
         jsonRequestBody.details = inputDetail.value
         jsonRequestBody.importance = selectImporance.value
         initFetch(jsonRequestBody)
+
+        selectImporance.value = "critical";
+        inputTitle.innerText = ""
+        inputDetail.innerText = ""
+
     }
 
 }
@@ -91,11 +96,9 @@ async function initFetch(jsonRequestBody) {
 
     toggleModal();
 
-if(addTask.is_ok){
-
-    fetchTodo()
-}
-
+    if (addTask.is_ok) {
+        fetchTodo()
+    }
 
 }
 
