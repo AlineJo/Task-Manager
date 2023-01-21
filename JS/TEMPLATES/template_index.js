@@ -11,7 +11,7 @@ const templateContentCard = document.getElementById('templateContentCard')
 
 export function handleAPIResponse(tasks) {
 
-    clearContentContainer(tasks.status)
+    clearContentContainer(tasks[0].status)
 
     tasks.forEach(t => {
         populateData(t)
@@ -38,7 +38,10 @@ function populateData(task) {
 
     cardTitle.innerText = task.title
     cardDetails.innerText = task.details
-    cardLastUpdate.innerText = task.lastUpdate
+
+    // convert epoch to date
+    let myDate = new Date(task.lastUpdated * 1000);
+    cardLastUpdate.innerText = myDate.toLocaleString()
 
     switch (task.status) {
         case "todo": contentContainerTodo.append(clone); break;
