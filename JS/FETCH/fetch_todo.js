@@ -3,7 +3,7 @@ import {handleAPIResponse} from "../TEMPLATES/template_index.js"
 
 fetchTodo()
 
-async function fetchTodo() {
+export async function fetchTodo() {
     const response = await fetch(API_URL_GET_TODO, HTTP_METHOD_GET_NO_CACHE);
    
     if (!response.ok) {
