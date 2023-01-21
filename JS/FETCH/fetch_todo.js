@@ -1,5 +1,5 @@
 import { API_URL_GET_TODO, HTTP_METHOD_GET_NO_CACHE } from "../global/API_URLs.js";
-import {handleAPIResponseGetTodo} from "../TEMPLATES/template_todo.js"
+import {handleAPIResponse} from "../TEMPLATES/template_index.js"
 
 fetchTodo()
 
@@ -11,7 +11,7 @@ async function fetchTodo() {
     }
     const tasks = await response.json();
 
-    handleAPIResponseGetTodo(tasks)
+    handleAPIResponse(tasks)
 
 }
 
