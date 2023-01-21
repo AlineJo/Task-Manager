@@ -20,11 +20,11 @@
             <!-- jumbotron Body -->
             <div class="h-100 p-5 bg-light border rounded-3">
                 <!-- jumbotron title -->
-                <div id="contentContainerTodoTitle" class="btn btn-lg btn-outline-success" ></div>
+                <div id="contentContainerTodoTitle" class="btn btn-lg btn-outline-success fs-3"></div>
                 <!-- jumbotron contentContainerTodo -->
                 <div id="contentContainerTodo" class="sgOverflow_Y sgHeight_90p py-4">
 
-
+                    <!-- templateContentCard lives here !!! -->
 
                 </div>
                 <!--/ jumbotron contentContainerTodo -->
@@ -43,7 +43,7 @@
                 <!-- jumbotron contentContainerInReview -->
                 <div id="contentContainerInReview" class="sgOverflow_Y sgHeight_90p py-4">
 
-
+                    <!-- templateContentCard lives here !!! -->
 
                 </div>
                 <!--/ jumbotron contentContainerInReview -->
@@ -59,47 +59,18 @@
             <div class="h-100 p-5 bg-light border rounded-3">
                 <!-- jumbotron title -->
                 <h2 id="contentContainerDoneTitle"></h2>
-                <!-- jumbotron contentContainerInReview -->
+                <!-- jumbotron contentContainerDone -->
                 <div id="contentContainerDone" class="sgOverflow_Y sgHeight_90p py-4">
 
-
+                    <!-- templateContentCard lives here !!! -->
 
                 </div>
-                <!--/ jumbotron contentContainerInReview -->
+                <!--/ jumbotron contentContainerDone -->
             </div>
             <!--/ jumbotron Body -->
 
         </div>
         <!--/ jumbotron -> Done -->
-
-
-        <!-- templateContentCard -->
-        <template id="templateContentCard">
-            <!-- content card -->
-            <div class="card siContentCard mb-4">
-                <div class="row g-0">
-                    <!-- card importance -->
-                    <div id="cardImportance" class="col-md-1 rounded-start">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <!-- card title -->
-                            <h5 id="cardTitle" class="card-title">Card title</h5>
-                            <!-- card details -->
-                            <p id="cardDetails" class="card-text">This is a wider card with supporting text
-                                below as a natural
-                                lead-in to additional content. This content is a little bit longer.</p>
-                            <!-- cardLastUpdate -->
-                            <p id="cardLastUpdate" class="card-text"><small class="text-muted">Last updated
-                                    3
-                                    mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/ content card -->
-        </template>
-        <!--/ templateContentCard -->
 
 
     </div>
@@ -122,21 +93,21 @@
                     <form class="needs-validation">
 
                         <div class="btn-group mb-3">
-                            <button id="btnImportance" class="btn btn-success btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Importance
+                            <button id="btnImportance" class="btn btn-success btn-lg dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Importance
                             </button>
                             <ul class="dropdown-menu">
-                              <li class="dropdown-item d-flex align-items-center gap-2 py-2">Critical</li>
-                              <li class="dropdown-item d-flex align-items-center gap-2 py-2">High</li>
-                              <li class="dropdown-item d-flex align-items-center gap-2 py-2">Normal</li>
-                              <li class="dropdown-item d-flex align-items-center gap-2 py-2">Low</li>
+                                <li class="dropdown-item d-flex align-items-center gap-2 py-2">Critical</li>
+                                <li class="dropdown-item d-flex align-items-center gap-2 py-2">High</li>
+                                <li class="dropdown-item d-flex align-items-center gap-2 py-2">Normal</li>
+                                <li class="dropdown-item d-flex align-items-center gap-2 py-2">Low</li>
                             </ul>
-                          </div>
+                        </div>
 
                         <div class="mb-3">
                             <label for="idFormWebsiteLink" class="form-label">Task Title</label>
-                            <input id="idFormWebsiteLink" type="text" class="form-control"
-                                placeholder="Fix bug #3">
+                            <input id="idFormWebsiteLink" type="text" class="form-control" placeholder="Fix bug #3">
                             <div class="valid-feedback">Please enter Task Title</div>
                         </div>
 
@@ -162,6 +133,34 @@
     <!--/ Modal -> Add Content -->
 
 
+    <!-- templateContentCard -->
+    <template id="templateContentCard">
+        <!-- content card -->
+        <div class="card siContentCard mb-4">
+            <div class="row g-0">
+                <!-- card importance -->
+                <div id="cardImportance" class="col-md-1 rounded-start">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <!-- card title -->
+                        <h5 id="cardTitle" class="card-title">Card title</h5>
+                        <!-- card details -->
+                        <p id="cardDetails" class="card-text">This is a wider card with supporting text
+                            below as a natural
+                            lead-in to additional content. This content is a little bit longer.</p>
+                        <!-- cardLastUpdate -->
+                        <p id="cardLastUpdate" class="card-text"><small class="text-muted">Last updated
+                                3
+                                mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ content card -->
+    </template>
+    <!--/ templateContentCard -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -170,17 +169,10 @@
         crossorigin="anonymous"></script>
 
     <script type="module" src="./JS/LABELS/label_index.js"></script>
-
     <script type="module" src="./JS/FETCH/fetch_todo.js"></script>
-    <script type="module" src="./JS/TEMPLATES/template_todo.js"></script>
-
     <script type="module" src="./JS/FETCH/fetch_in_review.js"></script>
-    <script type="module" src="./JS/TEMPLATES/template_in_review.js"></script>
-
-
     <script type="module" src="./JS/FETCH/fetch_done.js"></script>
-    <script type="module" src="./JS/TEMPLATES/template_done.js"></script>
-
+    <script type="module" src="./JS/TEMPLATES/template_index.js"></script>
     <script type="module" src="./JS/FETCH/fetch_add_task.js"></script>
 
 
