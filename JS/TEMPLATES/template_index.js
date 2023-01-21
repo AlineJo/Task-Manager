@@ -11,6 +11,8 @@ const templateContentCard = document.getElementById('templateContentCard')
 
 export function handleAPIResponse(tasks) {
 
+    clearContentContainer(tasks.status)
+
     tasks.forEach(t => {
         populateData(t)
     });
@@ -44,4 +46,13 @@ function populateData(task) {
         case "done": contentContainerDone.append(clone); break;
     }
 
+}
+
+
+function clearContentContainer(status) {
+    switch (status) {
+        case "todo": contentContainerTodo.innerHTML = ""; break;
+        case "in_review": contentContainerInReview.innerHTML = ""; break;
+        case "done": contentContainerDone.innerHTML = ""; break;
+    }
 }
