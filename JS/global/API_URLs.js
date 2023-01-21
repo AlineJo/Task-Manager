@@ -29,3 +29,4 @@ export const API_URL_GET_TODO = 'http://localhost/expprojects/'+domain+'/php/get
 export const API_URL_GET_IN_REVIEW = 'http://localhost/expprojects/'+domain+'/php/get-in-review.php';
 export const API_URL_GET_DONE = 'http://localhost/expprojects/'+domain+'/php/get-done.php';
 export const API_URL_ADD_TASK = 'http://localhost/expprojects/'+domain+'/php/add-task.php';
+export const API_URL_UPDATE_TASK = 'http://localhost/expprojects/'+domain+'/php/update-task.php';
