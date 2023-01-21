@@ -1,9 +1,15 @@
-// new container container
+// todo content container
 const contentContainerTodo = document.getElementById('contentContainerTodo')
+// new container container
+const contentContainerInReview = document.getElementById('contentContainerInReview')
+// done content container
+const contentContainerDone = document.getElementById('contentContainerDone')
+
 // template ContentCard
 const templateContentCard = document.getElementById('templateContentCard')
 
-export function handleAPIResponseGetTodo(tasks) {
+
+export function handleAPIResponse(tasks) {
 
     tasks.forEach(t => {
         populateData(t)
@@ -32,6 +38,10 @@ function populateData(task) {
     cardDetails.innerText = task.details
     cardLastUpdate.innerText = task.lastUpdate
 
-    contentContainerTodo.append(clone)
+    switch (task.status) {
+        case "todo": contentContainerTodo.append(clone); break;
+        case "in_review": contentContainerInReview.append(clone); break;
+        case "done": contentContainerDone.append(clone); break;
+    }
 
 }
