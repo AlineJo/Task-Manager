@@ -12,18 +12,22 @@
 }
 
 .sgCritical{
+    color: white;
     background-color: var(--importanceColorCritical);
 }
 
 .sgHigh{
+    color: black;
     background-color: var(--importanceColorHigh);
 }
 
 .sgNormal{
+    color: black;
     background-color: var(--importanceColorNormal);
 }
 
 .sgLow{
+    color: black;
     background-color: var(--importanceColorLow);
 }
 

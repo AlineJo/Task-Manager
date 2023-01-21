@@ -20,7 +20,7 @@
             <!-- jumbotron Body -->
             <div class="h-100 p-5 bg-light border rounded-3">
                 <!-- jumbotron title -->
-                <div id="contentContainerTodoTitle" class="btn btn-lg btn-outline-success fs-3"></div>
+                <div id="contentContainerTodoTitle" class="btn btn-outline-success fs-3 mb-2"></div>
                 <!-- jumbotron contentContainerTodo -->
                 <div id="contentContainerTodo" class="sgOverflow_Y sgHeight_90p py-4">
 
@@ -39,7 +39,7 @@
             <!-- jumbotron Body -->
             <div class="h-100 p-5 bg-light border rounded-3">
                 <!-- jumbotron title -->
-                <h2 id="contentContainerInReviewTitle"></h2>
+                <h2 id="contentContainerInReviewTitle" class="fs-3 mb-4"></h2>
                 <!-- jumbotron contentContainerInReview -->
                 <div id="contentContainerInReview" class="sgOverflow_Y sgHeight_90p py-4">
 
@@ -58,7 +58,7 @@
             <!-- jumbotron Body -->
             <div class="h-100 p-5 bg-light border rounded-3">
                 <!-- jumbotron title -->
-                <h2 id="contentContainerDoneTitle"></h2>
+                <h2 id="contentContainerDoneTitle" class="fs-3 mb-4"></h2>
                 <!-- jumbotron contentContainerDone -->
                 <div id="contentContainerDone" class="sgOverflow_Y sgHeight_90p py-4">
 
@@ -81,41 +81,39 @@
 
 
     <!-- Modal -> Add Content -->
-    <div id="idInsertNewContentModal" class="modal fade" tabindex="-1" aria-labelledby="idInsertNewContentModalTitle"
-        aria-hidden="true">
+    <div id="addTaskModal" class="modal fade" tabindex="-1" aria-labelledby="addTaskModalTitle" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 id="idInsertNewContentModalTitle" class="modal-title fs-5">Modal title</h1>
+                    <h1 id="addTaskModalTitle" class="modal-title fs-5"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form class="needs-validation">
 
-                        <div class="btn-group mb-3">
-                            <button id="btnImportance" class="btn btn-success btn-lg dropdown-toggle" type="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Importance
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item d-flex align-items-center gap-2 py-2">Critical</li>
-                                <li class="dropdown-item d-flex align-items-center gap-2 py-2">High</li>
-                                <li class="dropdown-item d-flex align-items-center gap-2 py-2">Normal</li>
-                                <li class="dropdown-item d-flex align-items-center gap-2 py-2">Low</li>
-                            </ul>
+                        <div class="mb-3">
+                            <label id="selectImporanceLabel" for="selectImporance" class="form-label"></label>
+                            <select id="selectImporance" class="form-select form-select-lg mb-3"
+                                aria-label=".form-select-lg example">
+                                <option id="optionChooseImportance" value="none" disabled></option>
+                                <option id="optionCritical" value="critical"></option>
+                                <option id="optionHigh" value="high"></option>
+                                <option id="optionNormal" value="normal"></option>
+                                <option id="optionLow" value="low"></option>
+                            </select>
                         </div>
 
                         <div class="mb-3">
-                            <label for="idFormWebsiteLink" class="form-label">Task Title</label>
-                            <input id="idFormWebsiteLink" type="text" class="form-control" placeholder="Fix bug #3">
-                            <div class="valid-feedback">Please enter Task Title</div>
+                            <label id="inputTitleLabel" for="inputTaskTitle" class="form-label"></label>
+                            <input id="inputTitle" type="text" class="form-control" placeholder="Fix bug #3">
+                            <div id="inputTitleError" class="valid-feedback">Please enter Task Title</div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="idFormDescription">Task Details</label>
-                            <textarea id="idFormDescription" class="form-control"
+                            <label id="inputDetailsLabel" for="inputDetails"></label>
+                            <textarea id="inputDetails" class="form-control"
                                 placeholder="ui bug login button isn't clickable"></textarea>
-                            <div class="valid-feedback">Please enter Task Details</div>
+                            <div id="inputDetailError" class="valid-feedback">Please enter Task Details</div>
                         </div>
 
 
@@ -124,8 +122,9 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="idBtnAddContent" type="button" class="btn btn-success">Save changes</button>
+                    <button id="btnClose" type="button" class="btn btn-lg btn-secondary"
+                        data-bs-dismiss="modal"></button>
+                    <button id="btnAddContent" type="button" class="btn btn-lg btn-success"></button>
                 </div>
             </div>
         </div>
