@@ -105,6 +105,6 @@ async function initFetch(jsonRequestBody) {
 
 function toggleModal() {
     $(function () {
-        $('#addTaskModal').modal('toggle');
+        $('#updateTaskModal').modal('toggle');
     });
 }
